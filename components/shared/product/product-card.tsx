@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import ProductPrice from "./product-price";
 import { Product } from "@/types";
+
+
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Card className="w-full max-w-sm">
@@ -28,6 +30,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             {product.stock>0? (
                <ProductPrice value={Number(product.price)}></ProductPrice>
             ):(<p className="text-destructive">Out Of Stock</p> )}
+           
         </div>
       </CardContent>
     </Card>

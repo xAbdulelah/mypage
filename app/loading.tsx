@@ -12,7 +12,12 @@ const LoadingPage = () => {
         width: "100vw",
       }}
     >
-      <Image src={loader} height={150} width={150} alt="Loading..." />
+      <Image
+  src={loader}
+  width={150}
+  alt="Loading..."
+  style={{ height: 'auto' }} // Maintain natural aspect ratio
+/>
     </div>
   );
 };
