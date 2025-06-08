@@ -5,3 +5,9 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+module.exports = {
+  images: {
+    domains: ['upload.wikimedia.org'], // Must match the domain in your env value
+  },
+}

@@ -1,18 +1,14 @@
-import ProductList from "@/components/shared/product/product-list";
+import Home from "@/components/shared/home";
 
-import { getLatestProducts } from "@/lib/actions/product.actions";
+export const metadata = {
+    title: 'Shop'
+}
 
-const Homepage = async () => {
-  const latestProducts = await getLatestProducts();
+const Shoppage = async () => {
+ 
   return (
-    <>
-      <ProductList
-        data={latestProducts}
-        title="new araaive"
-        limit={4}
-      ></ProductList>
-    </>
+  <Home />
   );
 };
 
-export default Homepage;
+export default Shoppage;

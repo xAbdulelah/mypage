@@ -11,7 +11,7 @@
 
 @layer utilities {
   .wrapper {
-    @apply max-w-7xl lg:mx-auto p-5 md:px-10 w-full;
+    @apply max-w-10/12 lg:mx-auto p-5 md:px-10 w-full;
   }
 
   .flex-start {
@@ -35,6 +35,51 @@
 
   .h3-bold {
     @apply font-bold text-xl lg:text-2xl;
+  }
+  @keyframes diagonal-float {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(100px, 50px); /* adjust as needed */
+    }
+    
+  }
+  @keyframes floatLabel {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+   transform: translate(var(--x), var(--y)); /* adjust as needed */
+  }
+}
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient1 {
+  background: linear-gradient(90deg, #67e8f9, #8b5cf6, #1eff00);
+  background-size: 300% 300%;
+  animation: gradientBackground 10s ease infinite;
+}
+.animate-gradient {
+  background: linear-gradient(90deg, #3b8992, #573b99, #1e7213);
+  background-size: 300% 300%;
+  animation: gradientBackground 8s ease-in infinite;
+}
+  .animate-diagonal {
+    animation: diagonal-float 5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate;
+  }
+    .animate-floatUpDown {
+    animation: floatLabel 1s  cubic-bezier(0.645, 0.045, 0.355, 1)  infinite alternate;
   }
 }
 
@@ -229,7 +274,4 @@
   }
 }
 
-.animate-gradient {
-  animation: gradient-move 4s ease infinite;
-  background-size: 200% 200%;
-}
+

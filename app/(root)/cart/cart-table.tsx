@@ -3,7 +3,7 @@
 import { Cart } from "@/types";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { useTransition , useState } from "react";
+import { useTransition, useState } from "react";
 import { addItemToCart, removeItemFromCart } from "@/lib/actions/cart.actions";
 import { ArrowRight, Loader, Minus, Plus } from "lucide-react";
 import Link from "next/link";
@@ -23,7 +23,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const CartTable = ({ cart }: { cart?: Cart }) => {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
- const [loadingButton, setLoadingButton] = useState("");
+  const [loadingButton, setLoadingButton] = useState("");
 
   return (
     <>
@@ -61,53 +61,53 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                       </Link>
                     </TableCell>
                     <TableCell className="flex-center gap-2">
-<Button
-  disabled={isPending}
-  variant="outline"
-  type="button"
-  onClick={() => {
-    setLoadingButton(`remove${item.name}`);
-    startTransition(async () => {
-      const res = await removeItemFromCart(item.productId);
-      setLoadingButton("");
-      if (!res.success) {
-        toast.error(res.message);
-      }
-    });
-  }}
->
-  {isPending &&
-  loadingButton === `remove${item.name}`  ? (
-    <Loader className="w-4 h-4 animate-spin" />
-  ) : (
-    <Minus className="w-4 h-4" />
-  )}
-</Button>
+                      <Button
+                        disabled={isPending}
+                        variant="outline"
+                        type="button"
+                        onClick={() => {
+                          setLoadingButton(`remove${item.name}`);
+                          startTransition(async () => {
+                            const res = await removeItemFromCart(
+                              item.productId
+                            );
+                            setLoadingButton("");
+                            if (!res.success) {
+                              toast.error(res.message);
+                            }
+                          });
+                        }}
+                      >
+                        {isPending && loadingButton === `remove${item.name}` ? (
+                          <Loader className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <Minus className="w-4 h-4" />
+                        )}
+                      </Button>
 
-<span>{item.qty}</span>
+                      <span>{item.qty}</span>
 
-<Button
-  disabled={isPending}
-  variant="outline"
-  type="button"
-  onClick={() => {
-    setLoadingButton( `add${item.name}` );
-    startTransition(async () => {
-      const res = await addItemToCart(item);
-      setLoadingButton('');
-      if (!res.success) {
-        toast.error(res.message);
-      }
-    });
-  }}
->
-  {isPending &&
-  loadingButton === `add${item.name}` ? (
-    <Loader className="w-4 h-4 animate-spin" />
-  ) : (
-    <Plus className="w-4 h-4" />
-  )}
-</Button>
+                      <Button
+                        disabled={isPending}
+                        variant="outline"
+                        type="button"
+                        onClick={() => {
+                          setLoadingButton(`add${item.name}`);
+                          startTransition(async () => {
+                            const res = await addItemToCart(item);
+                            setLoadingButton("");
+                            if (!res.success) {
+                              toast.error(res.message);
+                            }
+                          });
+                        }}
+                      >
+                        {isPending && loadingButton === `add${item.name}` ? (
+                          <Loader className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <Plus className="w-4 h-4" />
+                        )}
+                      </Button>
                     </TableCell>
                     <TableCell className="text-right">
                       SAR {item.price}

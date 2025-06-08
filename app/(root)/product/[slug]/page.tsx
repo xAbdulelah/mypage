@@ -17,7 +17,7 @@ const ProductDetailsPage = async (props: {
 
   const cart = await getMyCart();
   return (
-    <section>
+    <div className="px-6 wrapper "> <section>
       <div className="grid grid-cols-1 md:grid-cols-5">
         {/* image column*/}
         <div className="col-span-2">
@@ -84,7 +84,8 @@ const ProductDetailsPage = async (props: {
           </Card>
         </div>
       </div>
-    </section>
+    </section></div>
+   
   );
 };
 
