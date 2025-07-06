@@ -1,7 +1,7 @@
 import Home from "@/components/shared/home";
 
 export const metadata = {
-    title: 'Shop'
+    title: 'Bio'
 }
 
 const Shoppage = async () => {

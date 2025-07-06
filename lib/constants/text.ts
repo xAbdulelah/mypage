@@ -29,37 +29,37 @@ export const MySkills = [
     description: "Working with Java, C#, C++, and Python for software development.",
     label: "Java,C#,C++,Python"
   },
-  {
-    img: img_fullstack,
-    skill: 'Software Engineering',
-    description: "Studying algorithms, data structures, and software testing to improve engineering practices.",
-    label: "Algorithms,Testing,Data Structures"
-  },
+ // {
+  //  img: img_fullstack,
+ //   skill: 'Software Engineering',
+  //  description: "Studying algorithms, data structures, and software testing to improve engineering practices.",
+  //  label: "Algorithms,Testing,Data Structures"
+ // },
   
 ];
 
 export const networkEngineerCertifications = [
   {
     img: img_fullstack,
-    name: 'Linux Essentials',
+    name: 'Linux Essentials intraing',
     description: "Basic Linux skills including command-line operations, file system navigation, and user permissions.",
     label: "Linux",
   },
   {
     img: img_fullstack,
-    name: 'CCNA - Cisco Certified Network Associate',
+    name: 'CCNA - Cisco Certified Network Associate intraning ',
     description: "Covers networking fundamentals, IP connectivity, security basics, automation, and Cisco network configurations.",
     label: "CCNA",
   },
   {
     img: img_fullstack,
-    name: 'CompTIA A+',
+    name: 'CompTIA A+ trained ',
     description: "Core IT skills in hardware, software, troubleshooting, networking, and operating systems.",
     label: "A+",
   },
   {
     img: img_fullstack,
-    name: 'CompTIA Network+',
+    name: 'CompTIA Network+ intraining',
     description: "Networking basics, devices, troubleshooting, security, and best practices for managing wired/wireless networks.",
     label: "Network+",
   },
